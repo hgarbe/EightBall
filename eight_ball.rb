@@ -1,5 +1,6 @@
 require "colorize"
 
+
 @answers =
 [
 "It is certain",
@@ -33,6 +34,7 @@ require "colorize"
     puts "3) See all available answers".colorize(:yellow)
     puts "4) Reset answers to default".colorize(:yellow)
     puts "5) Exit".colorize(:yellow)
+    puts "Type quit to leave at any time".colorize(:red)
     choice = gets.to_i
   
     case choice #add other puts from menu and define methiods 
@@ -50,6 +52,9 @@ require "colorize"
       show_answers
     when 4  
       default_answers 
+    when quit
+      quit
+
     
     when 5
       puts "Thanks for playing!".colorize(:red)
@@ -91,4 +96,9 @@ end
     menu
   end  
 
-  menu
+  def quit
+    exit
+  end
+  
+  
+menu
